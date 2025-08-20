@@ -1,0 +1,517 @@
+{
+	"info": {
+		"_postman_id": "dubbing-management-api",
+		"name": "Dubbing Management API",
+		"description": "API collection for the Dubbing Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					}
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Get Dashboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/dashboard",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"dashboard"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Companies",
+			"item": [
+				{
+					"name": "Get All Companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/companies",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"companies"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Company",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/companies/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"companies",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Create Company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"New Streaming Service\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/companies",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"companies"
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Company",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Updated Company Name\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/companies/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"companies",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Company",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/companies/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"companies",
+								"1"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Shows",
+			"item": [
+				{
+					"name": "Get All Shows",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/shows",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shows"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/shows/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shows",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Create Show",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_id\": 1,\n    \"name\": \"New Show\",\n    \"total_episode\": 12\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/shows",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shows"
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Show",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_id\": 1,\n    \"name\": \"Updated Show Name\",\n    \"total_episode\": 24\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/shows/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shows",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Show",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/shows/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shows",
+								"1"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Languages",
+			"item": [
+				{
+					"name": "Get All Languages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/languages",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"languages"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Language",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/languages/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"languages",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Create Language",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Swedish\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/languages",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"languages"
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Language",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Updated Language Name\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/languages/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"languages",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Language",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/languages/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"languages",
+								"1"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Dubbings",
+			"item": [
+				{
+					"name": "Get All Dubbings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/dubbings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"dubbings"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Dubbing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/dubbings/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"dubbings",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Create Dubbing",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"show_id\": 1,\n    \"language_id\": 2,\n    \"duration\": 45,\n    \"price\": 5000.00,\n    \"merzigo_cost\": 3000.00,\n    \"income\": 8000.00\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/dubbings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"dubbings"
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Dubbing",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"show_id\": 1,\n    \"language_id\": 2,\n    \"duration\": 50,\n    \"price\": 5500.00,\n    \"merzigo_cost\": 3200.00,\n    \"income\": 8500.00\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/dubbings/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"dubbings",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Dubbing",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/dubbings/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"dubbings",
+								"1"
+							]
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+} 
