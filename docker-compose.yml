@@ -15,13 +15,16 @@ services:
       - "8001:8000"
     environment:
       COMPOSER_ALLOW_SUPERUSER: "1"
-    command: >
-      sh -lc "\
-      composer install --no-interaction --prefer-dist --optimize-autoloader && \
-      [ -f .env ] || cp .env.example .env && \
-      if ! grep -q '^APP_KEY=' .env || [ -z \"$(grep '^APP_KEY=' .env | cut -d= -f2)\" ]; then php artisan key:generate --force; fi && \
-      chmod -R 775 storage bootstrap/cache && \
-      php artisan serve --host=0.0.0.0 --port=8000"
+    command:
+      - sh
+      - -lc
+      - |
+          set -e
+          composer install --no-interaction --prefer-dist --optimize-autoloader
+          [ -f .env ] || cp .env.example .env
+          if grep -q '^APP_KEY=.' .env; then echo "APP_KEY mevcut, atlanıyor"; else php artisan key:generate --force; fi
+          chmod -R 775 storage bootstrap/cache
+          php artisan serve --host=0.0.0.0 --port=8000
     networks:
       - dubbing-network
 
