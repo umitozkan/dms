@@ -48,7 +48,7 @@ RUN chown -R www-data:www-data /var/www/html \
 RUN php artisan key:generate
 
 # Expose port 8000
-EXPOSE 8000
+EXPOSE 8001
 
 # Start Laravel development server
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"] 
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
