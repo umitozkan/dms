@@ -12,9 +12,9 @@ services:
       - ./:/var/www/html
       - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     ports:
-      - "8000:8000"
+      - "8001:8001"
     networks:
-      - dms-network
+      - dubbing-network
     depends_on:
       - mysql-db
     environment:
