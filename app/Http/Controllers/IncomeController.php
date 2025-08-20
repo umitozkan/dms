@@ -117,8 +117,9 @@ class IncomeController extends Controller
             $period = 'day';
         }
 
-        $query = Income::with(['dubbing.show.company', 'dubbing.language'])
-            ->orderBy('income_date', 'desc');
+        // Not: Tablo sunucu tarafı DataTables ile yüklendiği için burada satırları çekmeye gerek yok
+        // Grafikleri ve istatistikleri hesaplamak için yalnızca toplulaştırma sorguları kullanacağız
+        $query = Income::query();
 
         if ($companyId) {
             $query->whereHas('dubbing.show', function ($q) use ($companyId) {
@@ -133,8 +134,7 @@ class IncomeController extends Controller
             $query->whereDate('income_date', '<=', $endDate);
         }
 
-        // Fetch all filtered rows; pagination is handled on the client via DataTables
-        $incomes = $query->get();
+        // Kayıtları çekmiyoruz; tablo server-side endpoint'ten gelecek
 
         // Aggregates with same filters
         $aggregate = Income::query();
@@ -222,7 +222,6 @@ class IncomeController extends Controller
         $companies = Company::orderBy('name')->get(['id','name']);
 
         return view('incomes.index', [
-            'incomes' => $incomes,
             'stats' => $stats,
             'companies' => $companies,
             'selectedCompanyId' => $companyId,

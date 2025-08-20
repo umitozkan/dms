@@ -21,12 +21,11 @@ class DubbingController extends Controller
      */
     public function index()
     {
-        $dubbings = Dubbing::with(['show.company', 'language', 'incomes'])
-            ->withSum('incomes', 'revenue')
+        $dubbings = Dubbing::with(['show.company', 'language'])
             ->orderBy('created_at', 'desc')
             ->get();
             
-        // Toplam istatistikler (gelir/gider olmadan)
+        // Toplam istatistikler (gelir/gider içermeden)
         $stats = [
             'total_dubbings' => $dubbings->count(),
             'total_duration' => $dubbings->sum('duration'),

@@ -23,7 +23,7 @@
         @isset($stats)
         <div class="mb-8">
             <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="text-center">
                         <div class="text-3xl font-bold text-green-600">{{ $stats['total_shows'] }}</div>
                         <div class="text-sm text-gray-500">{{ __('Toplam Yapım') }}</div>
@@ -31,14 +31,6 @@
                     <div class="text-center">
                         <div class="text-3xl font-bold text-purple-600">{{ $stats['total_dubbings'] }}</div>
                         <div class="text-sm text-gray-500">{{ __('Toplam Dublaj') }}</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-indigo-600">${{ number_format($stats['total_revenue'] ?? 0, 0) }}</div>
-                        <div class="text-sm text-gray-500">{{ __('Toplam Fiyat') }}</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-red-600">${{ number_format($stats['total_cost'] ?? 0, 0) }}</div>
-                        <div class="text-sm text-gray-500">{{ __('Toplam Maliyet') }}</div>
                     </div>
                 </div>
             </div>
