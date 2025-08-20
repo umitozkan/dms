@@ -105,35 +105,7 @@
                         @enderror
                     </div>
 
-                    <div class="mb-6">
-                        <label for="price" class="block text-sm font-semibold text-gray-700 mb-2">{{ __('Fiyat ($)') }}</label>
-                        <input type="number" step="0.01" name="price" id="price" value="{{ old('price', $dubbing->price) }}" required min="0"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-gray-900 placeholder-gray-400"
-                            placeholder="{{ __('Fiyatı girin') }}">
-                        @error('price')
-                            <p class="mt-2 text-sm text-red-600 flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                {{ $message }}
-                            </p>
-                        @enderror
-                    </div>
-
-                    <div class="mb-6">
-                        <label for="merzigo_cost" class="block text-sm font-semibold text-gray-700 mb-2">{{ __('Merzigo Maliyeti ($)') }}</label>
-                        <input type="number" step="0.01" name="merzigo_cost" id="merzigo_cost" value="{{ old('merzigo_cost', $dubbing->merzigo_cost) }}" required min="0"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-gray-900 placeholder-gray-400"
-                            placeholder="{{ __('Merzigo maliyetini girin') }}">
-                        @error('merzigo_cost')
-                            <p class="mt-2 text-sm text-red-600 flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                {{ $message }}
-                            </p>
-                        @enderror
-                    </div>
+                    
 
                     <div class="mb-6">
                         <label class="block text-sm font-semibold text-gray-700 mb-2">{{ __('Durum') }}</label>

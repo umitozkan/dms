@@ -12,39 +12,10 @@ services:
       - ./:/var/www/html
       - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     ports:
-      - "8001:8001"
-    networks:
-      - dubbing-network
-    depends_on:
-      - mysql-db
-    environment:
-      - DB_HOST=mysql-db
-      - DB_DATABASE=dubbing_management
-      - DB_USERNAME=dubbing_user
-      - DB_PASSWORD=dubbing_password
-      - DB_PORT=3306
-
-  mysql-db:
-    image: mysql:8.0
-    container_name: dubbing-management-db
-    restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: dubbing_management
-      MYSQL_USER: dubbing_user
-      MYSQL_PASSWORD: dubbing_password
-      MYSQL_ROOT_PASSWORD: root_password
-    ports:
-      - "3307:3307"
-    volumes:
-      - mysql_data:/var/lib/mysql
-      - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
+      - "8001:8000"
     networks:
       - dubbing-network
 
 networks:
   dubbing-network:
     driver: bridge
-
-volumes:
-  mysql_data:
-    driver: local

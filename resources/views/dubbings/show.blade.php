@@ -30,22 +30,12 @@
                             <label class="block text-sm font-medium text-gray-700">Süre</label>
                             <p class="mt-1 text-sm text-gray-900">{{ $dubbing->duration }} dk</p>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">Fiyat</label>
-                            <p class="mt-1 text-sm text-gray-900">${{ number_format($dubbing->price, 2) }}</p>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">Merzigo Maliyeti</label>
-                            <p class="mt-1 text-sm text-gray-900">${{ number_format($dubbing->merzigo_cost, 2) }}</p>
-                        </div>
+                        
                         <div>
                             <label class="block text-sm font-medium text-gray-700">Toplam Gelir</label>
                             <p class="mt-1 text-sm text-gray-900">${{ number_format($dubbing->incomes->sum('revenue'), 2) }}</p>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">Fark</label>
-                            <p class="mt-1 text-sm font-medium {{ $dubbing->difference >= 0 ? 'text-green-600' : 'text-red-600' }}">${{ number_format($dubbing->difference, 2) }}</p>
-                        </div>
+                        
                         <div>
                             <label class="block text-sm font-medium text-gray-700">Oluşturulma</label>
                             <p class="mt-1 text-sm text-gray-900">{{ $dubbing->created_at->format('d.m.Y H:i') }}</p>
