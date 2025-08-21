@@ -9,8 +9,9 @@ services:
     volumes:
       - ./:/var/www/html
       - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
     ports:
-      - "8001:8000"
+      - "127.0.0.1:9000:9000"
     environment:
       COMPOSER_ALLOW_SUPERUSER: "1"
     command:
@@ -27,6 +28,7 @@ services:
           php artisan config:clear || true
           php artisan route:clear || true
           php artisan view:clear || true
+          php-fpm -F
     networks:
       - dubbing-network
 
