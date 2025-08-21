@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   laravel-app:
     build:
@@ -29,7 +27,6 @@ services:
           php artisan config:clear || true
           php artisan route:clear || true
           php artisan view:clear || true
-          php artisan serve --host=0.0.0.0 --port=8000
     networks:
       - dubbing-network
 
